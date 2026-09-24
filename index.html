@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 7th Monthsary, Maby 💜</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --lavender:    #c9b8e8;
+  --purple:      #9b72cf;
+  --deep:        #6b3fa0;
+  --soft-bg:     #f7f2ff;
+  --mid-bg:      #ede4fa;
+  --card-bg:     rgba(255,255,255,0.65);
+  --text:        #3a2060;
+  --text-mid:    #7a5fb0;
+  --text-dim:    #b09ad0;
+  --gold:        #c9a84c;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--soft-bg);
+  color: var(--text);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* PARTICLES */
+#particles { position:fixed; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
+.particle  { position:absolute; opacity:0; animation:floatUp linear infinite; pointer-events:none; }
+@keyframes floatUp {
+  0%   { opacity:0; transform:translateY(100vh) rotate(0deg); }
+  10%  { opacity:0.5; }
+  90%  { opacity:0.25; }
+  100% { opacity:0; transform:translateY(-5vh) rotate(360deg); }
+}
+
+/* REVEAL */
+.reveal { opacity:0; transform:translateY(44px); transition:opacity 0.85s ease, transform 0.85s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.d1{transition-delay:0.1s} .d2{transition-delay:0.22s} .d3{transition-delay:0.36s}
+.d4{transition-delay:0.5s}  .d5{transition-delay:0.65s}
+
+/* SECTIONS */
+section {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  position: relative; z-index:1;
+  padding: 80px 24px;
+  overflow: hidden;
+}
+
+/* ── HERO ── */
+#hero {
+  background: linear-gradient(160deg, #f7f2ff 0%, #ede4fa 40%, #e0d0f8 100%);
+  text-align: center; gap:0;
+}
+.hero-eyebrow {
+  font-size: 0.68rem; letter-spacing:0.32em; text-transform:uppercase;
+  color: var(--purple); margin-bottom:28px; font-weight:400;
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.2rem, 13vw, 7.5rem);
+  font-weight: 300; line-height: 0.95; color: var(--deep);
+  margin-bottom: 16px;
+}
+.hero-title em { color: var(--purple); font-style:italic; }
+.hero-name {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  color: var(--purple); margin-bottom: 40px; display:block;
+}
+.hero-badge {
+  display:inline-block;
+  background: rgba(155,114,207,0.1);
+  border: 1px solid rgba(155,114,207,0.25);
+  border-radius: 100px; padding:10px 28px;
+  font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase;
+  color: var(--text-mid); margin-bottom: 56px;
+}
+.scroll-hint {
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+  color:var(--text-dim); font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase;
+  animation: nudge 2s ease-in-out infinite;
+}
+.scroll-hint .vline { width:1px; height:44px; background:linear-gradient(to bottom, var(--purple), transparent); }
+@keyframes nudge { 0%,100%{transform:translateY(0);} 50%{transform:translateY(8px);} }
+
+/* SOFT DIVIDERS */
+.section-tag {
+  font-size:0.65rem; letter-spacing:0.32em; text-transform:uppercase;
+  color:var(--purple); margin-bottom:8px; text-align:center; font-weight:400;
+}
+
+/* ── MUSIC ── */
+#music-sec {
+  background: linear-gradient(160deg, #ede4fa, #e4d8f5, #f0e8ff);
+  gap:32px; text-align:center;
+}
+.music-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(155,114,207,0.2);
+  border-radius: 20px; padding:20px 24px;
+  max-width:380px; width:100%;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(107,63,160,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.music-card:hover { transform:translateY(-3px); box-shadow:0 14px 40px rgba(107,63,160,0.18); }
+.music-card a { display:flex; align-items:center; gap:14px; text-decoration:none; }
+.music-icon {
+  width:46px; height:46px; background:#1DB954; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.1rem; flex-shrink:0; color:#fff;
+}
+.music-info { flex:1; text-align:left; }
+.music-title { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--text); font-weight:400; }
+.music-artist { font-size:0.72rem; color:var(--text-mid); margin-top:3px; }
+.music-cta { font-size:0.62rem; color:var(--purple); letter-spacing:0.1em; text-transform:uppercase; }
+.music-quote {
+  font-family:'Cormorant Garamond',serif; font-style:italic;
+  font-size:clamp(1rem,3.5vw,1.3rem); color:var(--text-mid);
+  max-width:400px; line-height:1.75; text-align:center;
+}
+
+/* ── GALLERY ── */
+#gallery { background: var(--soft-bg); gap:40px; padding:80px 16px; }
+.gallery-title {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,7vw,3.2rem); font-weight:300; color:var(--deep);
+  text-align:center; margin-bottom:4px;
+}
+.gallery-sub { font-size:0.68rem; color:var(--text-dim); letter-spacing:0.15em; text-transform:uppercase; text-align:center; }
+
+.photo-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:10px; max-width:540px; width:100%;
+}
+.photo-slot {
+  position:relative; border-radius:16px; overflow:hidden;
+  cursor:pointer; aspect-ratio:4/5;
+  background: linear-gradient(145deg,rgba(201,168,240,0.15),rgba(180,140,220,0.1));
+  border: 1.5px dashed rgba(155,114,207,0.3);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.photo-slot:hover { border-color:rgba(155,114,207,0.6); transform:scale(1.02); box-shadow:0 8px 28px rgba(107,63,160,0.15); }
+.photo-slot.wide { grid-column:1/-1; aspect-ratio:16/8; }
+.photo-slot input[type="file"] { position:absolute; inset:0; opacity:0; cursor:pointer; width:100%; height:100%; }
+.photo-slot img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border-radius:14px; }
+.slot-icon { font-size:1.5rem; opacity:0.45; }
+.slot-text { font-size:0.62rem; color:var(--text-dim); letter-spacing:0.1em; text-transform:uppercase; text-align:center; padding:0 10px; }
+.slot-label {
+  position:absolute; bottom:0; left:0; right:0;
+  background:linear-gradient(transparent,rgba(107,63,160,0.55));
+  padding:18px 12px 10px;
+  font-family:'Dancing Script',cursive; font-size:0.9rem;
+  color:rgba(255,255,255,0.88); text-align:center;
+  opacity:0; transition:opacity 0.3s; pointer-events:none;
+}
+.photo-slot:hover .slot-label { opacity:1; }
+
+/* ── LETTER ── */
+#letter {
+  background: linear-gradient(160deg, #f0e8ff, #e8dcf8, #f5f0ff);
+  gap:48px;
+}
+.letter-wrap { max-width:580px; width:100%; }
+.letter-from {
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.4rem,4.5vw,1.9rem); color:var(--purple);
+  margin-bottom:28px; display:block;
+}
+.letter-text {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.05rem,3.5vw,1.22rem);
+  line-height:2.05; color:var(--text); white-space:pre-line;
+}
+.letter-text .hl { color:var(--deep); font-style:italic; font-weight:400; }
+.letter-divider {
+  display:flex; align-items:center; gap:14px; margin:36px 0;
+}
+.letter-divider .ln { flex:1; height:1px; background:linear-gradient(90deg,transparent,rgba(155,114,207,0.35)); }
+.letter-divider .ln.r { background:linear-gradient(90deg,rgba(155,114,207,0.35),transparent); }
+.letter-sign {
+  font-family:'Dancing Script',cursive;
+  font-size:clamp(1.5rem,5vw,2rem); color:var(--deep); display:block;
+}
+
+/* ── CLOSING ── */
+#closing {
+  background: linear-gradient(160deg,#ede4fa,#e0d0f8,#d8c8f0);
+  text-align:center; gap:24px;
+}
+.closing-ghost {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(6rem,25vw,14rem); font-weight:300;
+  color:transparent; -webkit-text-stroke:1px rgba(155,114,207,0.2);
+  position:absolute; user-select:none; line-height:1;
+}
+.closing-title {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,8vw,3.8rem); font-weight:300;
+  color:var(--deep); position:relative; z-index:2; line-height:1.25;
+}
+.closing-title em { color:var(--purple); font-style:italic; }
+.closing-sub {
+  font-size:clamp(0.8rem,2.5vw,0.92rem); color:var(--text-mid);
+  letter-spacing:0.12em; line-height:1.9; position:relative; z-index:2;
+}
+.closing-hearts { font-size:1.6rem; animation:hb 1.4s ease-in-out infinite; position:relative; z-index:2; }
+@keyframes hb { 0%,100%{transform:scale(1);} 50%{transform:scale(1.14);} }
+
+/* confetti */
+.cp { position:fixed; pointer-events:none; z-index:9999; width:8px; height:8px; border-radius:2px; }
+</style>
+</head>
+<body>
+
+<div id="particles"></div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-eyebrow reveal">Adi & Maby · seven months of love</div>
+  <h1 class="hero-title reveal d1">Happy<br><em>7th</em><br>Monthsary</h1>
+  <span class="hero-name reveal d2">my dearest Maby 💜</span>
+  <div class="hero-badge reveal d3">September 22, 2026</div>
+  <div class="scroll-hint reveal d4">
+    <span>scroll</span>
+    <div class="vline"></div>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section id="music-sec">
+  <div class="section-tag reveal">🎵 our song</div>
+  <div class="music-card reveal d1">
+    <a href="https://open.spotify.com/track/0s8bCskApFUuCIHCPPBE8N" target="_blank">
+      <div class="music-icon">▶</div>
+      <div class="music-info">
+        <div class="music-title">Risk It All</div>
+        <div class="music-artist">Bruno Mars</div>
+      </div>
+      <div class="music-cta">play ↗</div>
+    </a>
+  </div>
+  <div class="music-quote reveal d2">"I'd risk it all for you, Maby.<br>Every single time." 💜</div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="reveal">
+    <div class="section-tag">📸 us, in frames</div>
+    <div class="gallery-title">Our Moments</div>
+    <div class="gallery-sub">tap each frame · add your favorite photos</div>
+  </div>
+
+  <div class="photo-grid">
+    <div class="photo-slot wide reveal d1" id="s1">
+      <input type="file" accept="image/*" onchange="load(event,'s1')">
+      <div class="slot-icon">🖼️</div>
+      <div class="slot-text">your favorite photo of us</div>
+      <div class="slot-label">our best moment ✨</div>
+    </div>
+    <div class="photo-slot reveal d2" id="s2">
+      <input type="file" accept="image/*" onchange="load(event,'s2')">
+      <div class="slot-icon">💜</div>
+      <div class="slot-text">a sweet memory</div>
+      <div class="slot-label">always smiling 🌸</div>
+    </div>
+    <div class="photo-slot reveal d3" id="s3">
+      <input type="file" accept="image/*" onchange="load(event,'s3')">
+      <div class="slot-icon">🌸</div>
+      <div class="slot-text">just the two of us</div>
+      <div class="slot-label">just us 💜</div>
+    </div>
+    <div class="photo-slot reveal d4" id="s4">
+      <input type="file" accept="image/*" onchange="load(event,'s4')">
+      <div class="slot-icon">✨</div>
+      <div class="slot-text">a candid moment</div>
+      <div class="slot-label">candid & real ✨</div>
+    </div>
+    <div class="photo-slot reveal d5" id="s5">
+      <input type="file" accept="image/*" onchange="load(event,'s5')">
+      <div class="slot-icon">⭐</div>
+      <div class="slot-text">your favorite selfie</div>
+      <div class="slot-label">my favorite 💜</div>
+    </div>
+  </div>
+</section>
+
+<!-- LETTER -->
+<section id="letter">
+  <div class="letter-wrap">
+    <div class="section-tag reveal">💌 a letter from Adi</div>
+    <span class="letter-from reveal d1">My dearest Maby,</span>
+    <div class="letter-text reveal d2">Reading your letter made me smile — and tear up a little too, not gonna lie. Hahaha.
+
+<span class="hl">Salamat kaayo sa tanan.</span> For the patience, for the arrangements, for waiting up for me even when work keeps me longer than I'd like. I know it's not easy — 1.5 hours of travel, a demanding schedule, and a boyfriend who sometimes disappears into overtime. But the fact that you still show up, still make the effort, still wait — that means everything to me.
+
+I'll be honest — I get anxious too. When you want to see me and I can't be there right away, it eats at me. I hate the distance. I hate that sometimes work gets in the way of us. But I love that you understand my limits, and <span class="hl">I love you even more for never making me feel guilty about them.</span>
+
+And yes — I overthink sometimes. I know. Hahaha. But it only comes from loving you too much and wanting to protect what we have. So please be patient with me when those episodes come. All I need is you — your presence, your assurance, your "I love you." That's enough to calm everything.
+
+<span class="hl">I always think about a future where we don't have to count travel hours or squeeze moments between deadlines.</span> Where I can be close to you, always. That's what I'm working toward. That's what keeps me going.
+
+I love you so much, B. More than I probably say out loud. But I hope you feel it in every small thing I do.</div>
+
+    <div class="letter-divider reveal d3">
+      <div class="ln"></div>
+      <span style="font-size:1rem;">💜</span>
+      <div class="ln r"></div>
+    </div>
+    <span class="letter-sign reveal d4">Always yours, Adi 💜</span>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section id="closing">
+  <div class="closing-ghost">7</div>
+  <div class="closing-title reveal">Here's to<br><em>forever</em>, Maby 💜</div>
+  <div class="closing-sub reveal d1">Seven months down.<br>A lifetime to go.<br>I'd risk it all, every time.</div>
+  <div class="closing-hearts reveal d2">💜 🌸 💜</div>
+</section>
+
+<script>
+  // particles
+  const em = ['💜','🌸','✨','⭐','💫','🌷'];
+  const pc = document.getElementById('particles');
+  for (let i=0;i<18;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    p.textContent=em[Math.floor(Math.random()*em.length)];
+    p.style.cssText=`left:${Math.random()*100}vw;font-size:${0.6+Math.random()*0.9}rem;animation-duration:${10+Math.random()*14}s;animation-delay:${Math.random()*14}s;`;
+    pc.appendChild(p);
+  }
+
+  // scroll reveal
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        if(e.target.closest('#closing')&&!fired){ fired=true; burst(); }
+      }
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  // photos
+  function load(ev,id){
+    const f=ev.target.files[0]; if(!f) return;
+    const r=new FileReader();
+    r.onload=e=>{
+      const slot=document.getElementById(id);
+      let img=slot.querySelector('img');
+      if(!img){img=document.createElement('img');slot.appendChild(img);}
+      img.src=e.target.result;
+      const icon=slot.querySelector('.slot-icon');
+      const txt=slot.querySelector('.slot-text');
+      if(icon) icon.style.display='none';
+      if(txt)  txt.style.display='none';
+      slot.style.border='1.5px solid rgba(155,114,207,0.4)';
+    };
+    r.readAsDataURL(f);
+  }
+
+  // confetti
+  let fired=false;
+  const cols=['#c9b8e8','#9b72cf','#f0c4d4','#e8d5ff','#6b3fa0','#fff','#d4b8f0'];
+  function burst(){
+    for(let i=0;i<36;i++){
+      const c=document.createElement('div');
+      c.className='cp';
+      c.style.background=cols[Math.floor(Math.random()*cols.length)];
+      c.style.borderRadius=Math.random()>.5?'50%':'2px';
+      c.style.left=(10+Math.random()*80)+'vw';
+      c.style.top=(10+Math.random()*80)+'vh';
+      document.body.appendChild(c);
+      const dx=(Math.random()-.5)*250, dy=(Math.random()-.5)*250-70;
+      c.animate([{transform:'translate(0,0) scale(1)',opacity:1},{transform:`translate(${dx}px,${dy}px) scale(0)`,opacity:0}],
+        {duration:850+Math.random()*450,easing:'cubic-bezier(0,0,0.2,1)',fill:'forwards'}).onfinish=()=>c.remove();
+    }
+  }
+</script>
+</body>
+</html>
